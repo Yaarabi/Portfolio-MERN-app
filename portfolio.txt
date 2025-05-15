@@ -1,0 +1,156 @@
+🔹 SkillHub Website – Full Page Breakdown
+1. Authentication Pages
+📌 Login Page
+
+Fields: Email, Password.
+
+Functionality: Authenticates users via JWT.
+
+Redirects: If logged in, redirects to dashboard.
+
+📌 Signup Page
+
+Fields: Username, Email, Password.
+
+Functionality: Stores user data securely.
+
+Validations: Prevent duplicate emails.
+
+📌 Admin Login Page
+
+Fields: Admin credentials.
+
+Access Control: Redirects admins to the admin dashboard.
+
+2. Dashboard Pages
+📌 User Dashboard
+
+Sections: Profile Overview, Portfolio, Learning Resources.
+
+Interactivity: Users can update profiles.
+
+📌 Admin Dashboard
+
+Sections: User Management, Blog Approval, Statistics.
+
+Controls: Admin can delete users, approve posts.
+
+3. Portfolio Page
+📌 Main Portfolio Display
+
+Feature: Show projects with title, description, technologies used.
+
+Interactivity: Users can add new projects.
+
+📌 Project Detail Page
+
+Contains: Expanded description, GitHub links, live demo.
+
+4. Blog System Pages
+📌 Blog Home Page
+
+View: Display latest posts with author details.
+
+Interactivity: Users can like, comment.
+
+📌 Blog Editor Page
+
+Fields: Title, Content, Image Upload.
+
+Controls: Save draft, publish post.
+
+5. Learning Resources Page
+📌 Tutorial Listings
+
+Display: Show tutorials grouped by category.
+
+Interactivity: Users can mark tutorials as completed.
+
+📌 Code Challenges
+
+Setup: Users can attempt coding exercises.
+
+Validation: Auto-check answers.
+
+6. Settings & UI Pages
+📌 Profile Settings
+
+Options: Change password, update bio.
+
+Access Control: Users cannot edit email.
+
+📌 Dark Mode Toggle
+
+Functionality: Toggle between light/dark themes.
+
+📝 Jira Task Structuring
+💡 For each page, structure tasks in Jira:
+
+Design UI (Frontend components).
+
+Implement Backend Logic (API endpoints).
+
+Connect Backend & Frontend (Integration).
+
+Test Functionality (Debugging & improvements).
+
+
+
+🎨 SkillHub Color Scheme
+Section	Purpose	Recommended Colors
+Primary Theme	Main brand color	#1E88E5 (Deep Blue)
+Secondary Accent	Highlight elements	#FFC107 (Amber)
+Background	General UI background	#F5F5F5 (Light Gray)
+Text & Headings	Readability enhancement	#212121 (Dark Gray)
+Buttons (Primary)	CTA buttons (login, signup)	#1976D2 (Bright Blue)
+Buttons (Secondary)	Less emphasis actions	#FF5722 (Burnt Orange)
+Success Messages	Alerts for success	#4CAF50 (Green)
+Error Messages	Alerts for errors	#D32F2F (Red)
+Dark Mode Background	Dark UI theme	#121212 (Near Black)
+Dark Mode Text	Text on dark mode	#E0E0E0 (Light Gray)
+🖌️ Color Implementation in Pages
+Login & Signup Pages: Use Primary Theme (#1E88E5) for form headers and buttons.
+
+Dashboard: Use a mix of Secondary Accent (#FFC107) for highlights and Text Color (#212121) for better readability.
+
+
+Absolutely! Here’s a structured **color palette** for your SkillHub website, ensuring everything looks professional, modern, and visually appealing:
+
+---
+
+### 🎨 **SkillHub Color Scheme**
+| Section | Purpose | Recommended Colors |
+|---------|---------|-------------------|
+| **Primary Theme** | Main brand color | `#1E88E5` (Deep Blue) |
+| **Secondary Accent** | Highlight elements | `#FFC107` (Amber) |
+| **Background** | General UI background | `#F5F5F5` (Light Gray) |
+| **Text & Headings** | Readability enhancement | `#212121` (Dark Gray) |
+| **Buttons (Primary)** | CTA buttons (login, signup) | `#1976D2` (Bright Blue) |
+| **Buttons (Secondary)** | Less emphasis actions | `#FF5722` (Burnt Orange) |
+| **Success Messages** | Alerts for success | `#4CAF50` (Green) |
+| **Error Messages** | Alerts for errors | `#D32F2F` (Red) |
+| **Dark Mode Background** | Dark UI theme | `#121212` (Near Black) |
+| **Dark Mode Text** | Text on dark mode | `#E0E0E0` (Light Gray) |
+
+---
+
+### 🖌️ **Color Implementation in Pages**
+- **Login & Signup Pages:** Use **Primary Theme (`#1E88E5`)** for form headers and buttons.
+- **Dashboard:** Use a **mix of Secondary Accent (`#FFC107`)** for highlights and **Text Color (`#212121`)** for better readability.
+- **Portfolio Page:** Showcase projects using a **clean Light Gray (`#F5F5F5`)** background with card shadows.
+- **Blog Section:** Use **Burnt Orange (`#FF5722`)** for post headers and links to make it engaging.
+- **Admin Dashboard:** Add **Green (`#4CAF50`)** for success notifications and **Red (`#D32F2F`)** for errors.
+- **Dark Mode:** Toggle to **Near Black (`#121212`)** for background and **Light Gray (`#E0E0E0`)** for text.
+
+---
+
+These colors will **maintain consistency, improve accessibility, and ensure a clean user experience**. Would you like me to suggest a font style and UI theme to match these colors? 🚀
+
+
+Portfolio Page: Showcase projects using a clean Light Gray (#F5F5F5) background with card shadows.
+
+Blog Section: Use Burnt Orange (#FF5722) for post headers and links to make it engaging.
+
+Admin Dashboard: Add Green (#4CAF50) for success notifications and Red (#D32F2F) for errors.
+
+Dark Mode: Toggle to Near Black (#121212) for background and Light Gray (#E0E0E0) for text.
