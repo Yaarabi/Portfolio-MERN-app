@@ -4,7 +4,7 @@ import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const Form = () => {
+const Form = (props) => {
 
     const navigate = useNavigate()
     const [email, setEmail]= useState('')
@@ -13,7 +13,6 @@ const Form = () => {
     const login = ()=>{
     axios.post("http://localhost:4000/login", { email, password })
     .then((res) => {
-        console.log(res.data.token);
         localStorage.setItem("token", res.data.token)
         navigate("/profile");
     })
@@ -38,10 +37,10 @@ const Form = () => {
         onChange={(e) => { setPass(e.target.value) }}
         placeholder='your password'
         />
-        <button onClick={login}>login</button>
+        <button onClick={ login }>login</button>
         <a href="">Forget password ?</a>
         <hr />
-        <button>Create account</button>
+        <button onClick={ props.fun }>Create account</button>
     </div>
     )
 }

@@ -1,11 +1,11 @@
 
-import express from "express"
-import { register,login } from "../controllers/authControl.js";
+import express from "express";
+import { register, login } from "../controllers/authControl.js";
+import { registerValidation, loginValidation, validate } from "../middelewars/validation.js";
 
+const router = express.Router();
 
-const router = express.Router()
+router.post("/register", registerValidation, validate, register);
+router.post("/login", loginValidation, validate, login);
 
-router.post("/register", register);
-router.post("/login", login)
-
-export default router
+export default router;

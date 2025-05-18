@@ -13,11 +13,6 @@ const Profile = () => {
 
 useEffect(() => {
 
-    window.history.pushState(null, "", window.location.href);
-    
-    window.onpopstate = () => {
-        window.history.pushState(null, "", window.location.href);
-    };
 
 axios.get("http://localhost:4000/profile", {
     withCredentials: true,
@@ -25,8 +20,8 @@ axios.get("http://localhost:4000/profile", {
 })
 .then(response => setData(response.data.user))
 .catch((err) => {
-    console.error("API Error:", err); // Debug log
-    navigate("/"); // Redirect if authentication fails
+    console.log(err); 
+    navigate("/"); 
 });
 
 
