@@ -1,13 +1,13 @@
 
-import User from "../models/user.model";
-import bcrypt from "bcrypt" ;
+import User from "../models/user.model.js";
+import bcrypt from "bcryptjs" ;
 import jwt from 'jsonwebtoken';
 import dotenv from "dotenv" 
 
 
 dotenv.config()
 
-export const register = async (req, res) =>{
+const register = async (req, res) =>{
 
     try {
     const { username, email, password } = req.body;
@@ -28,7 +28,7 @@ export const register = async (req, res) =>{
 
 }
 
-export  const login = async (req, res) => {
+const login = async (req, res) => {
     try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
@@ -37,14 +37,13 @@ export  const login = async (req, res) => {
         return res.status(401).json({ error: 'Authentication failed try Again' });
     }
 
-    const passwordMatch = await bcrypt.compare(password, user.password);
+    const passwordMatch = await bcrypt.compare(password, user.password)
 
     if (!passwordMatch) {
         return res.status(401).json({ error: 'Authentication failed try Again' });
     }
 
-    
-    const token = jwt.sign({ userId: user._id, email: user.email }, process.env.SERCRET_KEY, {
+    const token = jwt.sign({ userId: user._id, email: user.email }, process.env.SECRET_KEY, {
         expiresIn: '1h',
     });
 
@@ -53,3 +52,5 @@ export  const login = async (req, res) => {
     res.status(500).json({ error: 'Authentication failed try Again' });
     }
 };
+
+export { register, login }
