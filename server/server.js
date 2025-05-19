@@ -5,6 +5,7 @@ import connectDB from "./config/db.js"
 import router from "./routers/user.routes.js";
 import authRouter from "./routers/athen.routers.js"
 import protRouter from "./routers/protectControl.js"
+import postRouter from "./routers/postRouters.js"
 import cors from "cors"
 
 
@@ -27,6 +28,7 @@ app.use("/api", router)
 
 app.use("/", authRouter)
 app.use("/", protRouter)
+app.use("/", postRouter)
 
 
 app.listen(PORT, ()=>{

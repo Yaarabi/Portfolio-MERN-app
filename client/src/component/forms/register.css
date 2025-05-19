@@ -1,4 +1,5 @@
 
+
 .form{
 
     height: 60vh;
@@ -10,18 +11,28 @@
     border: 1px solid #1976D2;
     border-radius: 10px;
     padding-top: 30px;
+    position: relative;
 
-    hr{
-        width: 90%;
-    }
+    
     button {
         width: 40%;
+        height: 36px;
         background-color: #1976D2;
+        border-radius: 5px;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    img {
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        cursor: pointer;
     }
 }
 
-.input {
-        width: 90%;
+input {
+        width: 80%;
         height: 30px;
         color: #1E88E5;
         background-color: #F5F5F5;

@@ -27,12 +27,12 @@ const Form = (props) => {
 
     return (
     <div className="form">
-        <input type="text"
+        <input className="input" type="text"
         value={email}
         onChange={(e) => { setEmail(e.target.value) }}
         placeholder='your email'
         />
-        <input type="password"
+        <input className="input" type="password"
         value={password}
         onChange={(e) => { setPass(e.target.value) }}
         placeholder='your password'

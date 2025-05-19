@@ -1,5 +1,5 @@
 
-
+import "./register.css"
 import axios from "axios"
 import { useState } from "react"
 
@@ -12,7 +12,7 @@ const Register = (props) => {
     const signUP = ()=> {
         // console.log({email, username, password})
         axios.post("http://localhost:4000/register", {
-           username, email, password
+            username, email, password
         })
         .then((res)=>{
             console.log(res)
@@ -24,6 +24,7 @@ const Register = (props) => {
 
     return (
     <div className="form">
+        <img onClick={()=>{ props.fun() }} src="/assets/back (1).png" height={"20px"} alt="" />
         <input type="text"
         value={username}
         onChange={(e) => { setName(e.target.value) }}
