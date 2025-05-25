@@ -1,5 +1,5 @@
 
-import "./forms.css"
+
 import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
@@ -26,23 +26,26 @@ const Form = (props) => {
 
 
     return (
-    <div className="form">
-        <input className="input" type="text"
+    <div className="container pt-5 d-flex align-items-center flex-column rounded border  justify-content-evenly" style={{ height: "60vh", width: "30vw" }}>
+        <input className="form-control" type="text"
         value={email}
         onChange={(e) => { setEmail(e.target.value) }}
         placeholder='your email'
         />
-        <input className="input" type="password"
+        <input className="form-control" type="password"
         value={password}
         onChange={(e) => { setPass(e.target.value) }}
         placeholder='your password'
         />
-        <button onClick={ login }>login</button>
+        <button className="btn btn-primary" onClick={ login }>login</button>
         <a href="">Forget password ?</a>
-        <hr />
-        <button onClick={ props.fun }>Create account</button>
+        <hr className="w-75" />
+        <button className="btn btn-primary" onClick={ props.fun }>Create account</button>
     </div>
+
+    
     )
+
 }
 
 export default Form

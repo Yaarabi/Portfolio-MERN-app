@@ -1,5 +1,5 @@
 
-import "./register.css"
+
 import axios from "axios"
 import { useState } from "react"
 
@@ -23,25 +23,28 @@ const Register = (props) => {
     }
 
     return (
-    <div className="form">
-        <img onClick={()=>{ props.fun() }} src="/assets/back (1).png" height={"20px"} alt="" />
+    <div className="position-relative container d-flex align-items-center flex-column rounded border  justify-content-evenly" style={{ height: "50vh", width: "30vw" }}>
+        <img className="position-absolute top-0 start-0" onClick={()=>{ props.fun() }} src="/assets/back (1).png" width={"20px"}  alt="" />
         <input type="text"
+        className="form-control"
         value={username}
         onChange={(e) => { setName(e.target.value) }}
         placeholder='your user name'
         />
         <input type="text"
+        className="form-control"
         value={email}
         onChange={(e) => { setEmail(e.target.value) }}
         placeholder='your email'
         />
         <input type="password"
+        className="form-control"
         value={password}
         onChange={(e) => { setPass(e.target.value) }}
         placeholder='your password'
         />
 
-        <button onClick={ ()=>{ signUP(), props.fun() } }>Create account</button>
+        <button className="btn btn-success" onClick={ ()=>{ signUP(), props.fun() } }>Create account</button>
     </div>
     )
 }

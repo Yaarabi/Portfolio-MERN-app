@@ -9,14 +9,14 @@ const CreatePost = (props) => {
     const [content, setContent] = useState('')
 
     const createPost = () => {
-        axios.post("http://localhost:4000/post/post", {
+        axios.post("http://localhost:4000/post", {
             title, content, authorId: props.id
         })
     }
 
     return (
         <div className="createPost">
-        <img onClick={()=>{ props.fun() }} src="/assets/back (1).png" height={"20px"} alt="" />
+        <img onClick={()=>{ props.fun() }} src="/assets/back (1).png" height={"20px"} width={"20px"} alt="" />
         <input type="text"
         id="titel"
         value={title}

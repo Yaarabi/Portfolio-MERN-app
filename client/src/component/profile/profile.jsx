@@ -6,15 +6,17 @@ import axios from "axios";
 import Header from "../header/header";
 import Post from "../post/post";
 import CreatePost from "../post/createPost";
+import { getPost } from "../../Zustand/store";
 // import { jwtDecode } from "jwt-decode";
 
 const Profile = () => {
 
+    const { loading, posts, error, fetchData } = getPost()
 
     const navigate =useNavigate()
     const [data, setData]= useState(null)
     const [ create, setCreate ] = useState(false)
-    const [ posts, setPost] = useState([])
+    // const [ posts, setPost] = useState([])
 
 
 useEffect(() => {
@@ -26,7 +28,6 @@ axios.get("http://localhost:4000/profile", {
 })
 .then((res) => {
     setData(res.data.user)
-    console.log(res.data.user)
 })
 .catch((err) => {
     console.log(err); 
@@ -36,16 +37,21 @@ axios.get("http://localhost:4000/profile", {
 
 }, [navigate]);
 
+// useEffect(()=>{
+
+//     axios.get("http://localhost:4000/getPosts")
+//     .then((res)=> {
+//         setPost(res.data)
+//     })
+//     .catch((err)=>console.log(err))
+
+// }, [])
+
 useEffect(()=>{
 
-    axios.get("http://localhost:4000/getPosts")
-    .then((res)=> {
-        console.log( res.data)
-        setPost(res.data)
-    })
-    .catch((err)=>console.log(err))
+    fetchData()
 
-}, [])
+}, [fetchData])
 
 
 
@@ -58,6 +64,13 @@ useEffect(()=>{
         setCreate(false)
     }
 
+    if(loading){
+        return <h1>Loading data ...</h1>
+    }
+
+    if(error){
+        return <h1>failed to fitch data</h1>
+    }
 
     return ( 
     <>

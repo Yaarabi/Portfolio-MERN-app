@@ -14,15 +14,15 @@
     position: relative;
 
     
-    button {
+    /* button {
         width: 40%;
         height: 36px;
         background-color: #1976D2;
         border-radius: 5px;
         color: white;
         border: none;
-        cursor: pointer;
-    }
+        cursor: pointer; */
+    /* } */
     img {
         position: absolute;
         top: 7px;

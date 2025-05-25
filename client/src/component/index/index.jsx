@@ -19,6 +19,8 @@ const Home = () => {
     }
 
     useEffect(()=>{
+        console.log(localStorage.getItem("token")); 
+
         if (localStorage.getItem("token")){
             return (navigate("/profile"))
         }
@@ -44,8 +46,8 @@ const Home = () => {
 // }, [navigate]);
 
 return (
-    <section>
-        { !create && <div className="description">
+    <section className="container d-flex align-items-center h-full" style={{ height: "100vh" }}>
+        { !create && <div className="w-50">
             <h1>Elevate Your Portfolio</h1>
             <p>Portfolio-MERN-app: Showcase your projects, write blog posts, and learn with interactive resources. Elevate your MERN stack skills! </p>
         </div>}
