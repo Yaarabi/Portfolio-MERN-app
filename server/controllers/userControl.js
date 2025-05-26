@@ -16,6 +16,20 @@ const getUsers = async (rea,res) =>{
 
 }
 
+const getOneUser = async (req,res) =>{
+
+    const {id} = req.params
+    try {
+
+        const result = await User.findById(id);
+        res.status(200).json(result)
+        
+    } catch (error) {
+        res.status(500).json({ message : "Can find User" })
+    }
+
+}
+
 const putUser = async (req,res) =>{
 
     const {id} = req.params
@@ -56,4 +70,4 @@ const deleteUser = async (req,res) =>{
 
 } 
 
-export { getUsers, putUser, deleteUser }
+export { getUsers, putUser, deleteUser, getOneUser }

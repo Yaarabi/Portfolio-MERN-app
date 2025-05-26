@@ -4,7 +4,7 @@ import Form from "../forms/form.jsx"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Register from "../forms/register.jsx"
-// import {jwtDecode} from "jwt-decode"
+import {jwtDecode} from "jwt-decode"
 
 const Home = () => {
 
@@ -18,32 +18,32 @@ const Home = () => {
         setCreate(false)
     }
 
-    useEffect(()=>{
-        console.log(localStorage.getItem("token")); 
+    // useEffect(()=>{
+    //     console.log(localStorage.getItem("token")); 
 
-        if (localStorage.getItem("token")){
-            return (navigate("/profile"))
-        }
-    }, [navigate])
+    //     if (localStorage.getItem("token")){
+    //         return (navigate("/profile"))
+    //     }
+    // }, [navigate])
 
-//     useEffect(() => {
-//     const token = localStorage.getItem("token");
-//     if (!token) return;
+    useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) return;
 
-//     try {
-//         const { exp } = jwtDecode(token);
-//         if (Date.now() >= exp * 1000) {
+    try {
+        const { exp } = jwtDecode(token);
+        if (Date.now() >= exp * 1000) {
             
-//             localStorage.removeItem("token");
-//         } else {
-//             navigate("/profile");
-//         }
-//     } catch (err) {
+            localStorage.removeItem("token");
+        } else {
+            navigate("/profile");
+        }
+    } catch (err) {
         
-//         console.log(err)
-//         localStorage.removeItem("token");
-//     }
-// }, [navigate]);
+        console.log(err)
+        localStorage.removeItem("token");
+    }
+}, [navigate]);
 
 return (
     <section className="container d-flex align-items-center h-full" style={{ height: "100vh" }}>

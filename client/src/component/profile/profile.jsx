@@ -11,7 +11,7 @@ import { getPost } from "../../Zustand/store";
 
 const Profile = () => {
 
-    const { loading, posts, error, fetchData } = getPost()
+    const { loading, posts, error, fetchData} = getPost()
 
     const navigate =useNavigate()
     const [data, setData]= useState(null)
@@ -55,6 +55,8 @@ useEffect(()=>{
 
 
 
+
+
     const logout = () => {
     localStorage.removeItem("token");
     navigate("/"); 
@@ -76,11 +78,11 @@ useEffect(()=>{
     <>
     { data && <Header name ={ data.username } />}
     <div className="add">
+        <button onClick={ () => setCreate(true)  }>New post +</button>
         <span>Share code ?</span>
-        <button onClick={ () => setCreate(true)  }>New post</button>
     </div>
     { data && create && <CreatePost id = { data._id } fun = { disaPost } />}
-    { (data)? <> {posts.map((ele, i)=>(<Post key={ i } username = { ele.authorId } title={ ele.title } desc={ ele.content } date={ ele.createdAt } />))} </> :  <span> leading ...</span>}
+    { (data)? <> {posts.map((ele, i)=>(<Post key={ i } id={ posts._id } username = { ele.authorId } title={ ele.title } desc={ ele.content } date={ ele.createdAt } />))} </> :  <span> leading ...</span>}
     <button onClick={ logout }>logout</button>
     </>
 )};

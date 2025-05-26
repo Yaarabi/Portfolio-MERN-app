@@ -25,7 +25,20 @@ export const getPost = create((set)=>({
             set({ loading: false, error: error.message })
         }
 
+    },
+    addLike : async (id) => {
+        try {
+            
+            const res = await axios.get(`http://localhost:4000/getPosts/${id}`)
+            const currentLIkes = res.data.likes
+            const after = currentLIkes + 1;
+            await axios.put(`http://localhost:4000/putPosts/${id}`,{
+                likes: after
+            })
+            console.log(after)
+        } catch (error) {
+            console.log(error)
+        }
     }
-
 
 }))

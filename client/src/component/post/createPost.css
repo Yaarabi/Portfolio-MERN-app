@@ -12,17 +12,13 @@
     border-radius: 10px;
     padding-top: 30px;
     position: fixed;
-    top: 10px;
+    top: 6vh;
+    z-index: 1;
 
     
     button {
         width: 40%;
         height: 36px;
-        background-color: #F5F5F5;
-        border-radius: 5px;
-        color: #1976D2;
-        border: none;
-        cursor: pointer;
     }
     img {
         position: absolute;
@@ -33,10 +29,6 @@
     input {
             width: 80%;
             height: 30px;
-            background-color: #F5F5F5;
-            color: black;
-            border-color: #F5F5F5;
-            padding-left: 10px;
         }
 
     #descr{

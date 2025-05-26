@@ -14,6 +14,19 @@ const getPosts = async (req,res) =>{
 
 }
 
+const getOnePost = async (req, res) => {
+    const {id} = req.params
+    try {
+        
+        const result = await Post.findById(id)
+        res.status(200).json(result)
+
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+
 const createPost = async (req, res) => {
     try {
     const { title, content, authorId } = req.body;
@@ -34,7 +47,7 @@ const putPost = async (req,res) =>{
 
     try {
         
-        const result= Post.findByIdAndUpdate(id, detail, { new: true })
+        const result= await Post.findByIdAndUpdate(id, detail, { new: true })
         if(!result){
             return  res.status(404).json({ message : "Not found" })
         }
@@ -42,7 +55,7 @@ const putPost = async (req,res) =>{
         res.status(200).json(result)
 
     } catch (error) {
-        res.status(500).json({ message : "Error in put the Post" })
+        res.status(500).json({ message : "Error in update" })
     }
 
 }
@@ -67,4 +80,4 @@ const deletePost = async (req,res) =>{
 
 } 
 
-export { getPosts, createPost, putPost, deletePost }
+export { getPosts, getOnePost,createPost, putPost, deletePost }

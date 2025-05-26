@@ -19,18 +19,20 @@ const CreatePost = (props) => {
         <img onClick={()=>{ props.fun() }} src="/assets/back (1).png" height={"20px"} width={"20px"} alt="" />
         <input type="text"
         id="titel"
+        className="form-control"
         value={title}
         onChange={(e) => { setTitle(e.target.value) }}
         placeholder='title or languege'
         />
         <textarea
         id="descr"
+        className="form-control"
         value={content}
         onChange={(e) => { setContent(e.target.value) }}
         placeholder='description or code'
         />
 
-        <button onClick={()=>{ createPost(), props.fun() } }>Create post</button>
+        <button className="btn btn-light" onClick={()=>{ createPost(), props.fun() } }>Create post</button>
     </div>
 )
 }
